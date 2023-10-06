@@ -1,0 +1,276 @@
+*{box-sizing: border-box;}
+body{
+    margin: 0px;
+    padding: 0px;
+    font-family: 'Rubik', sans-serif;   
+     background: #111;
+}
+h1, h3{
+    font-weight: 400;
+}
+
+.weather-app{
+    min-height: 100vh;
+    background:#000;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    position: relative;
+    color: #fff;
+    transition: 500ms;
+    opacity: 1;
+}
+
+/* add background overlay */
+
+.weather-app::before{
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.1);
+    z-index: 0;
+}
+
+.container{
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    left: 0;
+    top: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    flex-direction: column;
+    padding: 2em 3em 4em 3em;
+}
+
+.container .brand{
+    font-size: 35px;
+    font-weight: bold;
+}
+
+.container > div{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.city-time, .temp, .weather{
+    margin: 0 1em;
+}
+
+.city-time h1{
+    margin: 0;
+    margin-bottom: 0.2em;
+    font-size: 3em;
+}
+
+.temp{
+    font-size: 7em;
+    margin: 0;
+}
+.weather img{
+    display: block;
+    justify-content: center;
+    align-items: center;
+    margin:auto;
+}
+
+
+
+.panel{
+    position: absolute;
+    width: 30%;
+    height: 90%;
+    top: 0;
+    right: 5%;
+    bottom: 0;
+    background: rgba(110, 110, 110, 0.1);
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.3);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid rgb(215, 212, 212);
+    /* rgba(255, 255, 255, 0.18) */
+    z-index: 1;
+    padding: 3em 2em;
+    border-radius: 20px;
+    overflow: hidden;
+    margin: auto 0 ;
+
+}
+
+.panel form{
+    margin-bottom: 3em;
+}
+
+#search-btn{
+    position: absolute;
+    top: 0;
+    right: 0;
+    padding: 1.5em;
+    margin: 0;
+    border: none;
+    outline: none;
+    background: #fff;
+    color: #000;
+    cursor: pointer;
+    font-size: 1em;
+    transition: .4s;
+    border-radius: 0 0 0 20px;
+}
+
+#search-btn i{
+    font-size: 1.5em;
+}
+
+#search-btn:hover{
+    background: #e7e4e4 !important;
+    color: #000;
+}
+
+.search{
+    background: none;
+    border: none;
+    border-bottom: 1px solid #ccc;
+    padding: 0 1em 0.5em 0;
+    width: 80%;
+    color: #fff;
+    font-size: 1em;
+}
+
+.search:focus{
+    outline: none;
+}
+
+.search::placeholder{
+    color: #f0efef;
+}
+
+.panel ul{
+    padding: 0 0 1em 0;
+    margin: 3em 0;
+    border-bottom: 1px solid #ccc;
+}
+
+.panel ul li{
+    color: #fcf5f5;
+    margin: 2.2em 0;
+}
+
+.panel ul h4{
+    margin: 3em 0;
+}
+
+.city {
+    display: block;
+    cursor: pointer;
+}
+
+.city:hover{
+    color: #fff;
+}
+
+.weather-details li{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.date-container{
+    display: flex;
+    flex-direction: column;
+    align-items: left;
+    justify-content: center;
+    gap: 10px;
+   margin-top: -1em;
+   width: 100%;
+}
+
+.msg{
+    margin-top: 1.8em;
+    color: #000;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+background-color: #f3f1f1;
+padding: 20px;
+text-align: center;}
+
+.weather .condition{
+    text-transform: uppercase;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+}
+
+
+
+
+#result img {
+   
+    filter: drop-shadow(0 1.8em 3.7em var(--shadow));
+  }
+/* responsive */
+
+
+@media screen and (max-width:1000px){
+    .panel, .container{
+        position: relative;
+        width: 100%;
+        top:0;
+        right: 0;
+        left: 0;
+       bottom: 0;
+    }
+    .weather-app{
+        background-position: right;
+    }
+  
+
+    .panel{
+        padding: 20px;
+    }
+
+   #result{
+    font-size: 1em;width: 100%;
+   }
+
+   
+    
+
+
+   
+}
+
+@media screen and (max-width:500px){
+    html{
+        font-size: 12px;
+    }
+   
+    #result{
+        font-size: .6em;width: 100%;
+       }
+    
+
+
+   
+}
+
+@media screen and (max-width:300px){
+    .weather-app{
+        min-height: 40em;
+
+    }
+
+   
+   
+
+   
+
+   
+
+    
+}
